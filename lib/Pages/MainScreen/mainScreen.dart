@@ -1,4 +1,6 @@
+import 'package:byteSpace/Pages/Explore/explore.dart';
 import 'package:byteSpace/Pages/Home/home.dart';
+import 'package:byteSpace/Pages/Profile/profile.dart';
 import 'package:flutter/material.dart';
 
 import '../../size_config.dart';
@@ -61,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
           onTap: onTaped,
         ),
       ),
-      body: _currentIndex == 0 ? HomePage() : Container(),
+      body: _currentIndex == 0 ? HomePage() :_currentIndex ==1?Explore(): _currentIndex ==2?AccountScreen(): Container(),
     );
   }
 
