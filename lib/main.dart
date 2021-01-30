@@ -1,5 +1,5 @@
-
 // import 'package:byteSpace/Pages/MainScreen/mainScreen.dart';
+import 'package:byteSpace/Pages/Home/home.dart';
 import 'package:byteSpace/Pages/MainScreen/mainScreen.dart';
 import 'package:byteSpace/size_config.dart';
 import 'package:byteSpace/themeData.dart';
@@ -20,18 +20,15 @@ class MyApp extends StatelessWidget {
       return OrientationBuilder(builder: (context, orientation) {
         SizeConfig().init(constraints, orientation);
         return MaterialApp(
-          title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
             textTheme:
                 TextTheme(bodyText2: TextStyle(color: AppTheme.darkBlue)),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: LandingPage(),
+          home: HomePage(),
         );
       });
     });
   }
 }
-
-

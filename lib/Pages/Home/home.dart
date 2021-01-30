@@ -36,26 +36,28 @@ class HomePage extends StatelessWidget {
               onPressed: () {})
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "Hey Denin",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Hey Denin",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text("Checkout the latest Bytes",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400)),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Posts()
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text("Checkout the latest Bytes",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400)),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Posts()
+          ],
+        ),
       ),
     );
   }
