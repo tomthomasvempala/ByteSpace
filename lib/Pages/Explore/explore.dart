@@ -10,18 +10,29 @@ class Explore extends StatefulWidget {
 class _ExploreState extends State<Explore> {
   @override
   Widget build(BuildContext context) {
+    initState() {
+      courses.forEach((element) {
+        searchList.add(element);
+      });
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
           child: Column(
-        children: [TopPart(), ...courses.map((e) => CourseCard(e)).toList()],
+        children: [
+          TopPart(() {
+            setState(() {});
+          }),
+          ...searchList.map((e) => CourseCard(e)).toList()
+        ],
       )),
     );
   }
 }
 
 class TopPart extends StatefulWidget {
-  TopPart({Key key}) : super(key: key);
-
+  Function rebuild;
+  TopPart(this.rebuild);
   @override
   _TopPartState createState() => _TopPartState();
 }
@@ -53,6 +64,15 @@ class _TopPartState extends State<TopPart> {
           Padding(
             padding: const EdgeInsets.fromLTRB(15, 30, 15, 10),
             child: TextField(
+              onChanged: (s) {
+                searchList = List();
+                searchList = courses
+                    .where((element) => (element['name'] as String)
+                        .toLowerCase()
+                        .contains(s.toLowerCase()))
+                    .toList();
+                widget.rebuild();
+              },
               decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
@@ -177,6 +197,40 @@ class CourseCard extends StatelessWidget {
 }
 
 var courses = [
+  {
+    "name": "Guitar course",
+    "images":
+        "https://miro.medium.com/max/5000/1*Dpb3vjQtqb4D1nAU4RnRWA@2x.png",
+    "caption": "These are my new guitarcourses",
+    "time": "35 hours",
+  },
+  {
+    "name": "Music Course",
+    "images":
+        "https://i.gadgets360cdn.com/large/VivoS6vsS5_Vivo_main_1585720569400.jpg",
+    "time": "35 hours",
+    "caption": "Talk about 5g",
+    "tags": ["all", "technology"]
+  },
+  {
+    "name": "Dance course",
+    "images":
+        "https://www.master-and-more.eu/fileadmin/user_upload/Sociology_.jpg",
+    "caption": "We all need to take eyes of mobile and start talking",
+    "time": "35 hours",
+  },
+  {
+    "name": "Jazz course",
+    "propic":
+        "https://i.pinimg.com/originals/d3/02/e4/d302e4d06d9afae957b686985215270a.jpg",
+    "images":
+        "https://upload.wikimedia.org/wikipedia/commons/c/cb/Life_Skills.jpg",
+    "caption": "This is what we have been wating for",
+    "time": "35 hours",
+  },
+];
+
+var searchList = [
   {
     "name": "Guitar course",
     "images":
