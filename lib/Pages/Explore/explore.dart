@@ -65,3 +65,38 @@ padding: const EdgeInsets.fromLTRB(40, 0, 40, 10),
   }
 }
 
+var courses = [
+  {
+    "name":"Guitar course"
+    "images": 
+      "https://miro.medium.com/max/5000/1*Dpb3vjQtqb4D1nAU4RnRWA@2x.png"
+    ,
+    "caption": "These are my new guitarcourses",
+  },
+  {
+    "name": "Music Course",
+    "images": 
+      "https://i.gadgets360cdn.com/large/VivoS6vsS5_Vivo_main_1585720569400.jpg",
+    
+    "time": "2 hours ago",
+    "caption": "Talk about 5g",
+    "tags": ["all", "technology"]
+  },
+  {
+    "name": "Dance course",
+    "images": 
+      "https://www.master-and-more.eu/fileadmin/user_upload/Sociology_.jpg"
+    ,
+    "caption": "We all need to take eyes of mobile and start talking",
+  },
+  {
+    "name": "Jazz course",
+    "propic":
+        "https://i.pinimg.com/originals/d3/02/e4/d302e4d06d9afae957b686985215270a.jpg",
+    "images": 
+      "https://upload.wikimedia.org/wikipedia/commons/c/cb/Life_Skills.jpg",
+    "caption": "This is what we have been wating for",
+  },
+];
+
+
