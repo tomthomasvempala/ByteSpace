@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                 TextTheme(bodyText2: TextStyle(color: AppTheme.darkBlue)),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: HomePage(),
+          home: MainScreen(),
         );
       });
     });
