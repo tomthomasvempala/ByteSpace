@@ -1,7 +1,11 @@
+
+// import 'package:byteSpace/Pages/MainScreen/mainScreen.dart';
 import 'package:byteSpace/Pages/MainScreen/mainScreen.dart';
 import 'package:byteSpace/size_config.dart';
 import 'package:byteSpace/themeData.dart';
 import 'package:flutter/material.dart';
+
+import 'Pages/LandingPage/landingPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,9 +27,11 @@ class MyApp extends StatelessWidget {
                 TextTheme(bodyText2: TextStyle(color: AppTheme.darkBlue)),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: MainScreen(),
+          home: LandingPage(),
         );
       });
     });
   }
 }
+
+
