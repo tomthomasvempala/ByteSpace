@@ -1,3 +1,4 @@
+import 'package:byteSpace/Pages/Home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../../size_config.dart';
@@ -38,28 +39,30 @@ class _MainScreenState extends State<MainScreen> {
       }
     ];
     return Scaffold(
-        bottomNavigationBar: SizedBox(
-      // height: (80 / 9.48) * SizeConfig.heightMultiplier,
-      child: BottomNavigationBar(
-        iconSize: 6.5 * SizeConfig.widthMultiplier,
-        backgroundColor: Theme.of(context).canvasColor,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: AppTheme.darkBlue,
-        unselectedItemColor: AppTheme.darkBlue,
-        unselectedFontSize: 3.5 * SizeConfig.textMultiplier,
-        selectedFontSize: 4 * SizeConfig.textMultiplier,
-        currentIndex: _currentIndex,
-        items: navBarItems
-            .map(
-              (e) => BottomNavigationBarItem(
-                icon: e['icon'],
-                label: e['title'],
-              ),
-            )
-            .toList(),
-        onTap: onTaped,
+      bottomNavigationBar: SizedBox(
+        // height: (80 / 9.48) * SizeConfig.heightMultiplier,
+        child: BottomNavigationBar(
+          iconSize: 6.5 * SizeConfig.widthMultiplier,
+          backgroundColor: Theme.of(context).canvasColor,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: AppTheme.darkBlue,
+          unselectedItemColor: AppTheme.darkBlue,
+          unselectedFontSize: 3.5 * SizeConfig.textMultiplier,
+          selectedFontSize: 4 * SizeConfig.textMultiplier,
+          currentIndex: _currentIndex,
+          items: navBarItems
+              .map(
+                (e) => BottomNavigationBarItem(
+                  icon: e['icon'],
+                  label: e['title'],
+                ),
+              )
+              .toList(),
+          onTap: onTaped,
+        ),
       ),
-    ));
+      body: _currentIndex == 0 ? HomePage() : Container(),
+    );
   }
 
   void onTaped(int index) {

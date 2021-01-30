@@ -1,5 +1,6 @@
 import 'package:byteSpace/Pages/MainScreen/mainScreen.dart';
 import 'package:byteSpace/size_config.dart';
+import 'package:byteSpace/themeData.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
+            textTheme:
+                TextTheme(bodyText2: TextStyle(color: AppTheme.darkBlue)),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           home: MainScreen(),
